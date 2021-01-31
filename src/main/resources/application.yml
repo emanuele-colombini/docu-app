@@ -1,0 +1,13 @@
+spring:
+    cloud:
+        gateway:
+            routes: 
+            - id: backend
+              uri: http://docu-be:8080/api
+              predicates:
+              - Path=/api/**
+            - id: web
+              uri: http://docu-fe
+              predicates:
+              - Path=/**
+            
